@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "415707727260",
+    "firebase_url": "https://bike4life-56ff8.firebaseio.com",
+    "project_id": "bike4life-56ff8",
+    "storage_bucket": "bike4life-56ff8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415707727260:android:a2ff5ba16f3c3682",
+        "android_client_info": {
+          "package_name": "com.tiagojacomelli.bike4life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415707727260-gahs1i4d04vdpbeo49nilhhtqllqtjqi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tiagojacomelli.bike4life",
+            "certificate_hash": "a9ea68d274f9d77db2d7a82d7ddd3ee38b9728e3"
+          }
+        },
+        {
+          "client_id": "415707727260-3a8u4igr6r740gbdovvq681bv7ahns8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQhsA4BRvg25JsBMJIh0Do61JPWuwKvz8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415707727260-3a8u4igr6r740gbdovvq681bv7ahns8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

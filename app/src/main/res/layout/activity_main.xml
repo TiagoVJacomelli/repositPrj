@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="678dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:layout_marginTop="40dp"
+            android:text="LOGIN"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="25dp"
+            android:text="Email"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/txt_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Senha"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edt_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:text="Entrar"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:text="Cadastrar"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
