@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         RadioButton selectedLevel = findViewById(eventLevel.getCheckedRadioButtonId());
 
         Event event = new Event(
-                ApplicaationPreferences.getUser().getUserName(),
+                ApplicaationPreferences.getUser().getName(),
                 eventName.getText().toString(),
                 eventDate.getText().toString(),
                 maxPeople.getText().toString(),

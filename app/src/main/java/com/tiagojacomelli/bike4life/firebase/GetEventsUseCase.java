@@ -7,7 +7,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.tiagojacomelli.bike4life.implementations.EventListView;
 import com.tiagojacomelli.bike4life.models.Event;
-import com.tiagojacomelli.bike4life.models.User;
 
 import java.util.ArrayList;
 

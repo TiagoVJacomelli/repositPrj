@@ -17,12 +17,12 @@ public class RegisterEventUseCase extends BaseUseCase {
     }
 
     public void registerEvent(Event event) {
-
         String eventId = eventsReference.push().getKey();
 
         if (eventId != null) {
-            eventsReference.child(eventId).setValue(event);
+            event.setEventId( eventId );
 
+            eventsReference.child(eventId).setValue(event);
             eventsReference.child(eventId)
                     .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override

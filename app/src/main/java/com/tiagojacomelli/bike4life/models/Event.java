@@ -2,6 +2,9 @@ package com.tiagojacomelli.bike4life.models;
 
 public class Event {
 
+    public static final String EVENT_FLAG = "event_flag_id";
+
+    private String eventId;
     private String userName;
     private String eventName;
     private String eventDate;
@@ -16,6 +19,14 @@ public class Event {
         this.eventDate = eventDate;
         this.maxPeople = maxPeople;
         this.eventLevel = eventLevel;
+    }
+
+    public String getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(String eventId) {
+        this.eventId = eventId;
     }
 
     public String getEventName() {
