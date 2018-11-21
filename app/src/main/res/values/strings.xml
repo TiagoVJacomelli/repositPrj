@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Bike4Life</string>
+    <string name="mypref">myPreferences</string>
 </resources>

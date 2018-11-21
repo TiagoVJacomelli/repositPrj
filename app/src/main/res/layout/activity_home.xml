@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/cardview_container_background"
     android:orientation="vertical"
-    tools:context=".HomeActivity">
+    tools:context=".activities.HomeActivity">
 
     <HorizontalScrollView
         android:layout_width="match_parent"

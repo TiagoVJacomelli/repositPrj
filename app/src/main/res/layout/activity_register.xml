@@ -18,7 +18,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edt_name"
+            android:id="@+id/event_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -33,7 +33,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edt_date"
+            android:id="@+id/event_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -48,7 +48,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edt_total"
+            android:id="@+id/event_total"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -63,22 +63,26 @@
             android:textSize="18sp" />
 
         <RadioGroup
+            android:id="@+id/rdg_activity_level"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/rdo_activity_recreation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Recreação"
                 android:textSize="16sp" />
 
             <RadioButton
+                android:id="@+id/rdo_activity_amateur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Amador"
                 android:textSize="16sp" />
 
             <RadioButton
+                android:id="@+id/rdo_activity_professional"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Semiprofissional"
@@ -87,7 +91,7 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/btn_save"
+            android:id="@+id/btn_register_event"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginLeft="30dp"

@@ -4,13 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.tiagojacomelli.bike4life.Main2Activity">
+    tools:context="com.tiagojacomelli.bike4life.activities.UserRegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="12dp">
+
+        <TextView
+            android:id="@+id/txt_userName"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="25dp"
+            android:text="Nome de Usuário"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/register_userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/txt_name"
@@ -21,7 +36,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edt_name"
+            android:id="@+id/register_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -36,7 +51,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edt_date"
+            android:id="@+id/register_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -51,7 +66,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edt_total"
+            android:id="@+id/register_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -66,6 +81,7 @@
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/register_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -79,18 +95,21 @@
             android:textSize="18sp" />
 
         <RadioGroup
+            android:id="@+id/rdo_genre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/rdo_opt_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Masculino"
                 android:textSize="16sp" />
 
             <RadioButton
+                android:id="@+id/rdo_opt_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Feminino"
@@ -107,22 +126,26 @@
             android:textSize="18sp" />
 
         <RadioGroup
+            android:id="@+id/rdo_user_level"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/rdo_opt_recreation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Recreação"
                 android:textSize="16sp" />
 
             <RadioButton
+                android:id="@+id/rdo_opt_amateur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Amador"
                 android:textSize="16sp" />
 
             <RadioButton
+                android:id="@+id/rdo_opt_professional"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Semiprofissional"
