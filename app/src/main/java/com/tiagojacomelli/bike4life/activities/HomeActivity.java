@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        
+
         eventListRV = findViewById(R.id.mainEventList);
         myEventsSwitch = findViewById(R.id.my_events_switch);
         profileButton = findViewById(R.id.profile_button);
