@@ -7,6 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.tiagojacomelli.bike4life.R;
@@ -19,13 +22,16 @@ import com.xwray.groupie.ViewHolder;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity implements EventListView, ItemViewHolderListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener, EventListView, ItemViewHolderListener {
 
     private GetEventsUseCase eventUseCase = new GetEventsUseCase(this);
 
-    private RecyclerView eventListRV;
+    private GroupAdapter<ViewHolder> mAdapter = new GroupAdapter<>();
 
-    Button createEvent;
+    private RecyclerView eventListRV;
+    private Switch myEventsSwitch;
+    private ImageView profileButton;
+    private Button createEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +39,44 @@ public class HomeActivity extends AppCompatActivity implements EventListView, It
         setContentView(R.layout.activity_home);
         
         eventListRV = findViewById(R.id.mainEventList);
+        myEventsSwitch = findViewById(R.id.my_events_switch);
+        profileButton = findViewById(R.id.profile_button);
         createEvent = findViewById(R.id.create_button);
 
-        createEvent.setOnClickListener(new View.OnClickListener() {
+        profileButton.setOnClickListener(this);
+        createEvent.setOnClickListener(this);
+
+        myEventsSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                openCreatEvent();
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                eventUseCase.getEventList(b);
             }
         });
 
-        eventUseCase.getEventList();
+        eventUseCase.getEventList(false);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.create_button: {
+                openCreatEvent();
+                break;
+            }
+            case R.id.profile_button: {
+                openProfile();
+                break;
+            }
+        }
     }
 
     private void openCreatEvent (){
         Intent intent = new Intent(HomeActivity.this,RegisterActivity.class);
         startActivity(intent);
+    }
+
+    private void openProfile() {
+
     }
 
     @Override

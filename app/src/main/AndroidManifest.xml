@@ -25,7 +25,8 @@
             android:label="Cadastro" />
         <activity android:name=".activities.UserRegisterActivity" />
         <activity android:name=".activities.UserSettingsActivity" />
-        <activity android:name=".activities.EventDetailsDetailsActivity"></activity>
+        <activity android:name=".activities.EventDetailsDetailsActivity" />
+        <activity android:name=".activities.ProfileActivity"></activity>
     </application>
 
 </manifest>

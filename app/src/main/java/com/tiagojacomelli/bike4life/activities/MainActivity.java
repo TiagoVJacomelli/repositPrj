@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.tiagojacomelli.bike4life.R;
+import com.tiagojacomelli.bike4life.cache.ApplicaationPreferences;
 import com.tiagojacomelli.bike4life.firebase.LoginUseCse;
 import com.tiagojacomelli.bike4life.implementations.LoginView;
 
@@ -33,6 +34,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         login.setOnClickListener(this);
         register.setOnClickListener(this);
+
+        // if user is logged in
+        if (ApplicaationPreferences.getUser() != null) {
+            goToHome();
+        }
     }
 
     @Override

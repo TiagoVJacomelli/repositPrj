@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.tiagojacomelli.bike4life.cache.ApplicaationPreferences;
 import com.tiagojacomelli.bike4life.implementations.EventListView;
 import com.tiagojacomelli.bike4life.models.Event;
 
@@ -18,7 +19,7 @@ public class GetEventsUseCase extends BaseUseCase {
         this.eventListView = eventListView;
     }
 
-    public void getEventList() {
+    public void getEventList(final boolean isMyEvent) {
 
         eventsReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -27,7 +28,15 @@ public class GetEventsUseCase extends BaseUseCase {
                 ArrayList<Event> list = new ArrayList<>();
 
                 for (DataSnapshot eventItem: dataSnapshot.getChildren()) {
-                    list.add(eventItem.getValue(Event.class));
+                    Event item = eventItem.getValue(Event.class);
+
+                    if (item  != null) {
+                        if (isMyEvent && checkEvent( item )) {
+                            list.add(eventItem.getValue(Event.class));
+                        } else if ( !isMyEvent ) {
+                            list.add(eventItem.getValue(Event.class));
+                        }
+                    }
                 }
 
                 eventListView.setEvents(list);
@@ -40,4 +49,7 @@ public class GetEventsUseCase extends BaseUseCase {
         });
     }
 
+    private boolean checkEvent(Event item) {
+        return ApplicaationPreferences.getUser().getName().equals(item.getUserName());
+    }
 }

@@ -15,6 +15,7 @@ public class ItemViewHolder extends Item {
 
     private Event event;
     private ItemViewHolderListener viewHolderListener;
+    private boolean isSwitchOn = false;
 
     public ItemViewHolder(Event event, ItemViewHolderListener viewHolderListener) {
         this.event = event;
@@ -43,6 +44,14 @@ public class ItemViewHolder extends Item {
                 viewHolderListener.goToItemDetails(event.getEventId());
             }
         });
+
+//        if (isSwitchOn && !event.isMyEvent()) {
+//            cardContainer.setVisibility(View.VISIBLE);
+//        }
+    }
+
+    public void setSwitchOn(boolean switchOn) {
+        isSwitchOn = switchOn;
     }
 
     @Override
