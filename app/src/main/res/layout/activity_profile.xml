@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cardview_dark_background"
+    tools:context=".activities.ProfileActivity">
+
+    <include layout="@layout/background_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="26dp"
+            android:text="Profile" />
+
+
+        <TextView
+            android:id="@+id/profile_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="16dp"
+            android:text="Nome Usuario: " />
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="16dp"
+            android:text="Nome: " />
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="16dp"
+            android:text="E-Mail: " />
+        <TextView
+            android:id="@+id/profile_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="16dp"
+            android:text="Telefone de Contato: " />
+        <TextView
+            android:id="@+id/profile_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="16dp"
+            android:text="Genero: " />
+        <TextView
+            android:id="@+id/profile_user_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="16dp"
+            android:text="Nivelamento: " />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        android:textColor="@color/white"
+        android:text="logount"
+        android:background="@drawable/rounded_button_shape"/>
+
+</RelativeLayout>

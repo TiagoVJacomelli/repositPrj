@@ -1,103 +1,123 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <LinearLayout
+    <include layout="@layout/background_layout"/>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="12dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txt_name"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Nome"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/edt_name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:orientation="vertical"
+            android:padding="12dp">
 
-        <TextView
-            android:id="@+id/txt_date"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Data"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/edt_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date" />
-
-        <TextView
-            android:id="@+id/txt_total"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Quantidade de pessoas"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/edt_total"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-
-        <TextView
-            android:id="@+id/txt_level"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Nivelamento"
-            android:textSize="18sp" />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recreação"
-                android:textSize="16sp" />
+                android:layout_marginTop="25dp"
+                android:text="Nome"
+                android:textColor="@color/white"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/event_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Amador"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                app:backgroundTint="@color/white"
+                android:inputType="textPersonName" />
 
-            <RadioButton
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Semiprofissional"
-                android:textSize="16sp" />
+                android:layout_marginTop="25dp"
+                android:textColor="@color/white"
+                android:text="Data"/>
 
-        </RadioGroup>
+            <EditText
+                android:id="@+id/event_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/white"
+                android:inputType="date" />
 
-        <Button
-            android:id="@+id/btn_save"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorPrimary"
-            android:text="Salvar"
-            android:textAlignment="center"
-            android:textColor="@android:color/background_light"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/txt_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/white"
+                android:text="Quantidade de pessoas"/>
 
-    </LinearLayout>
-</ScrollView>
+            <EditText
+                android:id="@+id/event_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/white"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/txt_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/white"
+                android:text="Nivelamento"/>
+
+            <RadioGroup
+                android:id="@+id/rdg_activity_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdo_activity_recreation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/white"
+                    android:text="Recreação"/>
+
+                <RadioButton
+                    android:id="@+id/rdo_activity_amateur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/white"
+                    android:text="Amador"/>
+
+                <RadioButton
+                    android:id="@+id/rdo_activity_professional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/white"
+                    android:text="Semiprofissional"/>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_register_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_button_shape"
+                android:text="Salvar"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

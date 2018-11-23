@@ -1,4 +1,4 @@
-package com.tiagojacomelli.bike4life;
+package com.tiagojacomelli.bike4life.activities;
 
 import android.support.multidex.MultiDexApplication;
 
