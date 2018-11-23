@@ -102,7 +102,7 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
     }
 
     @Override
-    public void registerError() {
-        showMessage("Não foi possivel realizar o cadastro");
+    public void registerError(String message) {
+        showMessage(message);
     }
 }

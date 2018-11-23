@@ -16,7 +16,7 @@ public class CreateUserUseCase extends BaseUseCase {
         this.userRegisterView = userRegisterView;
     }
 
-    public void registerUser(User user) {
+    public void registerUser(final User user) {
 
         // Creating new user node, which returns the unique key value
         // new user node would be /users/$userName/
@@ -24,18 +24,22 @@ public class CreateUserUseCase extends BaseUseCase {
 
         // pushing user to 'users' node using the userId
         if (userId != null) {
-            usersReference.child(user.getUserName()).setValue(user);
-
             usersReference.child(user.getUserName())
-                    .addValueEventListener(new ValueEventListener() {
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            userRegisterView.registerSuccess();
+                            User mUser = dataSnapshot.getValue(User.class);
+                            if (mUser == null) {
+                                usersReference.child(user.getUserName()).setValue(user);
+                                userRegisterView.registerSuccess();
+                            } else {
+                                userRegisterView.registerError("User Name já existe!!!");
+                            }
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
-                            userRegisterView.registerError();
+                            userRegisterView.registerError("Não foi possivel realizar o cadastro");
                         }
                     });
         }
