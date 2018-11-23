@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.ValueEventListener;
 import com.tiagojacomelli.bike4life.cache.ApplicaationPreferences;
 import com.tiagojacomelli.bike4life.implementations.LoginView;
@@ -18,33 +19,39 @@ public class LoginUseCse extends BaseUseCase {
     }
 
     public void doLogin(String userName, final String password) {
-        usersReference.child(userName)
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        // get al user info from database
-                        User user = dataSnapshot.getValue(User.class);
+        try {
+            usersReference.child(userName)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        if (user != null ) {
-                            // validate password
-                            if (password.equals(user.getPassword())) {
-                                ApplicaationPreferences.saveUser(user);
-                                ApplicaationPreferences.setLogedStatus(true);
-                                loginView.loginSuccess();
+                            // get al user info from database
+                            User user = dataSnapshot.getValue(User.class);
+
+                            if (user != null) {
+                                // validate password
+                                if (password.equals(user.getPassword())) {
+                                    ApplicaationPreferences.saveUser(user);
+                                    ApplicaationPreferences.setLogedStatus(true);
+                                    loginView.loginSuccess();
+                                } else {
+                                    loginView.loginFailure("Senha incorreta");
+                                }
+
                             } else {
-                                loginView.loginFailure("Senha incorreta");
+                                loginView.loginFailure("Usuario não cadastrado");
                             }
-
-                        } else {
-                            loginView.loginFailure("Usuario não cadastrado");
                         }
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        loginView.loginFailure("Não foi possivél relizar o login");
-                    }
-                });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            loginView.loginFailure("Não foi possivél relizar o login");
+                        }
+                    });
+
+        } catch (DatabaseException e) {
+            loginView.loginFailure("Pro favor verifique se está usando 'User Name'");
+        }
     }
 }
