@@ -45,13 +45,6 @@ public class ItemViewHolder extends Item {
             }
         });
 
-//        if (isSwitchOn && !event.isMyEvent()) {
-//            cardContainer.setVisibility(View.VISIBLE);
-//        }
-    }
-
-    public void setSwitchOn(boolean switchOn) {
-        isSwitchOn = switchOn;
     }
 
     @Override

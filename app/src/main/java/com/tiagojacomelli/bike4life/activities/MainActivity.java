@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (view.getId() ) {
             case R.id.btn_login:  {
-                setLoginListener();
+                doLogin();
                 break;
             }
 
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void  setLoginListener() {
+    private void doLogin() {
         if (isFieldsEmpty()) {
             Toast.makeText(MainActivity.this, "Preencha todos os campos",Toast.LENGTH_SHORT).show();
         } else {
