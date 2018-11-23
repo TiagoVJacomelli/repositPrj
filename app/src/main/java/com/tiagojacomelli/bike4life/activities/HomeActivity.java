@@ -13,6 +13,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.tiagojacomelli.bike4life.R;
+import com.tiagojacomelli.bike4life.cache.ApplicaationPreferences;
 import com.tiagojacomelli.bike4life.firebase.GetEventsUseCase;
 import com.tiagojacomelli.bike4life.implementations.EventListView;
 import com.tiagojacomelli.bike4life.implementations.ItemViewHolderListener;
@@ -57,6 +58,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        validateLogout();
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.create_button: {
@@ -76,7 +83,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void openProfile() {
-
+        startActivity(new Intent(this, ProfileActivity.class));
     }
 
     @Override
@@ -109,5 +116,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this , EventDetailsDetailsActivity.class);
         intent.putExtra(Event.EVENT_FLAG, eventId);
         startActivity( intent );
+    }
+
+    private void validateLogout() {
+        if (!ApplicaationPreferences.getLogedStatus()) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
     }
 }

@@ -30,6 +30,7 @@ public class LoginUseCse extends BaseUseCase {
                             // validate password
                             if (password.equals(user.getPassword())) {
                                 ApplicaationPreferences.saveUser(user);
+                                ApplicaationPreferences.setLogedStatus(true);
                                 loginView.loginSuccess();
                             } else {
                                 loginView.loginFailure("Senha incorreta");

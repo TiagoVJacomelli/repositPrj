@@ -1,77 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity"
-    android:padding="10dp"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="86dp"
-        android:layout_marginTop="40dp"
-        android:text="LOGIN"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-        android:textSize="50sp" />
+    <include layout="@layout/background_layout"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:layout_marginTop="25dp"
-        android:text="Nome de Usuário"
-        android:textSize="18sp" />
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edt_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:text="LOGIN"
+            android:textAlignment="center"
+            android:textSize="50sp" />
 
-    <TextView
-        android:id="@+id/txt_senha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Senha"
-        android:textSize="18sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp"
+            android:text="Nome de Usuário"/>
 
-    <EditText
-        android:id="@+id/edt_senha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:inputType="textEmailAddress" />
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
-        android:text="Entrar"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_light"
-        android:textSize="20sp" />
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
-        android:text="Cadastrar"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_light"
-        android:textSize="20sp" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/txt_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:text="Senha"/>
+
+        <EditText
+            android:id="@+id/edt_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button_shape"
+            android:text="Entrar"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"/>
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button_shape"
+            android:text="Cadastrar"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

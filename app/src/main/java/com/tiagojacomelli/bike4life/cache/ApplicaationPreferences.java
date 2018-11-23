@@ -16,6 +16,7 @@ public class ApplicaationPreferences {
     private static Gson gson = new Gson();
 
     private static String USER_KEY = "user_prefs";
+    private static String LOGED_KEY = "loged_key";
 
     private ApplicaationPreferences(){
 
@@ -35,8 +36,13 @@ public class ApplicaationPreferences {
         editor.apply();
     }
 
-    public static void cleanSharedPref() {
-        editor.clear(); // Remove old data
+    public static void setLogedStatus(boolean isLoged) {
+        editor.putBoolean(LOGED_KEY, isLoged);
+        editor.commit();
+    }
+
+    public static boolean getLogedStatus() {
+        return sharedPreferences.getBoolean(LOGED_KEY, false);
     }
 
     public static void saveUser(User user) {
@@ -48,5 +54,9 @@ public class ApplicaationPreferences {
     public static User getUser() {
         String json = sharedPreferences.getString(USER_KEY, "");
         return gson.fromJson(json, User.class);
+    }
+
+    public static void cleanSharedPref() {
+        editor.clear(); // Remove old data
     }
 }

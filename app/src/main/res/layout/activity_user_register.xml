@@ -1,171 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.tiagojacomelli.bike4life.activities.UserRegisterActivity">
 
-    <LinearLayout
+    <include layout="@layout/background_layout"/>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="12dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txt_userName"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Nome de Usuário"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/register_userName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:orientation="vertical"
+            android:padding="12dp">
 
-        <TextView
-            android:id="@+id/txt_name"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Nome"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/register_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/txt_date"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Senha"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/register_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword" />
-
-        <TextView
-            android:id="@+id/txt_total"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="E-mail"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/register_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
-
-        <TextView
-            android:id="@+id/txt_phone"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Telefone"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/register_phone_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="phone" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Sexo"
-            android:textSize="18sp" />
-
-        <RadioGroup
-            android:id="@+id/rdo_genre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rdo_opt_male"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/txt_userName"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Masculino"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                android:text="Nome de Usuário"/>
 
-            <RadioButton
-                android:id="@+id/rdo_opt_female"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/register_userName"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Feminino"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                app:backgroundTint="@color/white"
+                android:inputType="textPersonName" />
 
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/txt_level"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="25dp"
-            android:text="Nivelamento"
-            android:textSize="18sp" />
-
-        <RadioGroup
-            android:id="@+id/rdo_user_level"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/rdo_opt_recreation"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recreação"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                android:text="Nome"/>
 
-            <RadioButton
-                android:id="@+id/rdo_opt_amateur"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/register_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Amador"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                app:backgroundTint="@color/white"
+                android:inputType="textPersonName" />
 
-            <RadioButton
-                android:id="@+id/rdo_opt_professional"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Semiprofissional"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                android:text="Senha"/>
 
-        </RadioGroup>
+            <EditText
+                android:id="@+id/register_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/white"
+                android:inputType="textPassword" />
 
-        <Button
-            android:id="@+id/btn_salvar"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorPrimary"
-            android:text="Salvar"
-            android:textAlignment="center"
-            android:textColor="@android:color/background_light"
-            android:textSize="20sp"
-            />
+            <TextView
+                android:id="@+id/txt_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                android:text="E-mail"/>
 
-    </LinearLayout>
-</ScrollView>
+            <EditText
+                android:id="@+id/register_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/white"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/txt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                android:text="Telefone"/>
+
+            <EditText
+                android:id="@+id/register_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/white"
+                android:inputType="phone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                android:text="Sexo"/>
+
+            <RadioGroup
+                android:id="@+id/rdo_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdo_opt_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/white"
+                    android:text="Masculino"/>
+
+                <RadioButton
+                    android:id="@+id/rdo_opt_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/white"
+                    android:text="Feminino"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txt_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                android:text="Nivelamento"/>
+
+            <RadioGroup
+                android:id="@+id/rdo_user_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdo_opt_recreation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/white"
+                    android:text="Recreação"/>
+
+                <RadioButton
+                    android:id="@+id/rdo_opt_amateur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/white"
+                    android:text="Amador"/>
+
+                <RadioButton
+                    android:id="@+id/rdo_opt_professional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/white"
+                    android:text="Semiprofissional"/>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_salvar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_button_shape"
+                android:text="Salvar"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
