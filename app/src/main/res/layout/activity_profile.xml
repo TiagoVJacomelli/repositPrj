@@ -83,6 +83,6 @@
         android:layout_margin="15dp"
         android:textColor="@color/white"
         android:text="logount"
-        android:background="@drawable/rounded_button_shape"/>
+        android:background="@drawable/rounded_daark_grey_shape"/>
 
 </RelativeLayout>

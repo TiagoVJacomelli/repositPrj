@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_button_shape"
+            android:background="@drawable/rounded_daark_grey_shape"
             android:text="Entrar"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"/>
@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_button_shape"
+            android:background="@drawable/rounded_daark_grey_shape"
             android:text="Cadastrar"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"/>

@@ -18,6 +18,7 @@ import com.tiagojacomelli.bike4life.firebase.GetEventsUseCase;
 import com.tiagojacomelli.bike4life.implementations.EventListView;
 import com.tiagojacomelli.bike4life.implementations.ItemViewHolderListener;
 import com.tiagojacomelli.bike4life.models.Event;
+import com.tiagojacomelli.bike4life.utils.ItemViewHolder;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.ViewHolder;
 

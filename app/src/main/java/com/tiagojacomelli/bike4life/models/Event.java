@@ -1,5 +1,7 @@
 package com.tiagojacomelli.bike4life.models;
 
+import java.util.ArrayList;
+
 public class Event {
 
     public static final String EVENT_FLAG = "event_flag_id";
@@ -10,6 +12,7 @@ public class Event {
     private String eventDate;
     private String maxPeople;
     private String eventLevel;
+    private ArrayList<EventUser> partcipants;
 
     public Event() {  }
 
@@ -67,5 +70,17 @@ public class Event {
 
     public void setEventLevel(String eventLevel) {
         this.eventLevel = eventLevel;
+    }
+
+    public static String getEventFlag() {
+        return EVENT_FLAG;
+    }
+
+    public ArrayList<EventUser> getPartcipants() {
+        return partcipants;
+    }
+
+    public void setPartcipants(ArrayList<EventUser> partcipants) {
+        this.partcipants = partcipants;
     }
 }

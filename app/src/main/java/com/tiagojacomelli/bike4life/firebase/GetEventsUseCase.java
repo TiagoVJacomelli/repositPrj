@@ -1,9 +1,11 @@
 package com.tiagojacomelli.bike4life.firebase;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.ValueEventListener;
 import com.tiagojacomelli.bike4life.cache.ApplicaationPreferences;
 import com.tiagojacomelli.bike4life.implementations.EventListView;
@@ -28,17 +30,21 @@ public class GetEventsUseCase extends BaseUseCase {
                 ArrayList<Event> list = new ArrayList<>();
 
                 for (DataSnapshot eventItem: dataSnapshot.getChildren()) {
-                    Event item = eventItem.getValue(Event.class);
+                    try {
 
-                    if (item  != null) {
-                        if (isMyEvent && checkEvent( item )) {
-                            list.add(eventItem.getValue(Event.class));
-                        } else if ( !isMyEvent ) {
-                            list.add(eventItem.getValue(Event.class));
+                        Event item = eventItem.getValue(Event.class);
+                        if (item  != null) {
+                            if (isMyEvent && checkEvent( item )) {
+                                list.add(eventItem.getValue(Event.class));
+                            } else if ( !isMyEvent ) {
+                                list.add(eventItem.getValue(Event.class));
+                            }
                         }
+
+                    } catch (DatabaseException e) {
+                        Log.e(FIREBASE_ERROR_TAG, e.getMessage());
                     }
                 }
-
                 eventListView.setEvents(list);
             }
 

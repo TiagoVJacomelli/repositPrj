@@ -1,4 +1,4 @@
-package com.tiagojacomelli.bike4life.activities;
+package com.tiagojacomelli.bike4life.utils;
 
 import android.support.annotation.NonNull;
 import android.view.View;

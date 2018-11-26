@@ -22,7 +22,7 @@ public class RemoveEventUseCase extends BaseUseCase {
             eventsReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    eventDetailsView.onDeleteEvent();
+                    eventDetailsView.onEventResult("Evento removido");
                 }
 
                 @Override
